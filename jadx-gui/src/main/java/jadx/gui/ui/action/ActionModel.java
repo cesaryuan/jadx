@@ -91,6 +91,9 @@ public enum ActionModel {
 	JSON_PRETTIFY(CODE_AREA, "popup.json_prettify", "popup.json_prettify", null,
 			Shortcut.none()),
 
+	XML_LAYOUT_PRETTIFY(CODE_AREA, "popup.xml_layout_prettify", "popup.xml_layout_prettify", null,
+			Shortcut.none()),
+
 	SCRIPT_RUN(PLUGIN_SCRIPT, "script.run", "script.run", "ui/run",
 			Shortcut.keyboard(KeyEvent.VK_F8)),
 	SCRIPT_SAVE(PLUGIN_SCRIPT, "script.save", "script.save", "ui/menu-saveall",

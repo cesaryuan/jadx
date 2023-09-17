@@ -60,6 +60,10 @@ public final class CodeArea extends AbstractCodeArea {
 			addMenuForJsonFile();
 		}
 
+		if (node instanceof JResource && node.makeString().endsWith(".xml") && node.getParent().toString().equals("layout")) {
+			addMenuForXmlLayoutFile();
+		}
+
 		setHyperlinksEnabled(true);
 		setLinkScanningMask(InputEvent.CTRL_DOWN_MASK);
 		CodeLinkGenerator codeLinkGenerator = new CodeLinkGenerator(this);
@@ -152,6 +156,13 @@ public final class CodeArea extends AbstractCodeArea {
 		JNodePopupBuilder popup = new JNodePopupBuilder(this, getPopupMenu(), shortcutsController);
 		popup.addSeparator();
 		popup.add(new JsonPrettifyAction(this));
+	}
+
+	private void addMenuForXmlLayoutFile() {
+		ShortcutsController shortcutsController = getMainWindow().getShortcutsController();
+		JNodePopupBuilder popup = new JNodePopupBuilder(this, getPopupMenu(), shortcutsController);
+		popup.addSeparator();
+		popup.add(new XmlLayoutPrettifyAction(this));
 	}
 
 	public int adjustOffsetForToken(@Nullable Token token) {

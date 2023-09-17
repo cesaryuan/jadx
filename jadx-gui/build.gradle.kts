@@ -47,6 +47,9 @@ dependencies {
 	implementation("com.android.tools.build:apksig:8.1.1")
 	implementation("io.github.skylot:jdwp:2.0.0")
 
+	// used for xml prettify
+	implementation("org.jdom:jdom:1.1.3")
+
 	testImplementation(project(":jadx-core").dependencyProject.sourceSets.getByName("test").output)
 }
 
